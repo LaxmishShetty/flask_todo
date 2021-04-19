@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> {% block title %} Welcome to To-Do List {% endblock %}</h1>
+
+  {% for task in tasks %}
+    <span><a href="{{url_for('edit',task_id=task['id']) }}"> Edit </a> </span>
+    <li>
+        {{ task['title'] }}
+    </li>
+
+{% endfor %}
+{% endblock %}
